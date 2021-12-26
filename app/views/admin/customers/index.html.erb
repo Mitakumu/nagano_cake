@@ -1,0 +1,30 @@
+<h4>会員一覧</h4>
+<table>
+  <thead>
+    <tr>
+      <td>会員ID</td>
+      <td>氏名</td>
+      <td>メールアドレス</td>
+      <td>ステータス</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td>
+          <%= @customer.id %>
+        </td>
+        <td>
+          <%= @customer.name %>
+        </td>
+        <td>
+          <%= @customer.email %>
+        </td>
+        <td>
+          <%= @customer.is_deleted %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @items %>

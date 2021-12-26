@@ -1,0 +1,15 @@
+<h3>商品新規登録</h3>
+<%= form_with model: @item, lacal:true do |f| %>
+    <h4>商品画像</h4>
+    <%= f.attachment_field :image %>
+    <h4>商品名</h4>
+    <%= f.text_feild :name %>
+    <h4>商品説明</h4>
+    <%= f.text_area :introduction %>
+    <h4>ジャンル</h4>
+    <h4>税抜価格</h4>
+    <%= f.text_feild :price %>
+    <h4>販売ステータス</h4>
+    <%= f.select :is_active, Item.is_actives.keys.to_a, {} %>
+    <%= f.submit '新規登録', class: 'btn btn-success' %>
+<% end %>

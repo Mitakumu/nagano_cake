@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4><%= @customer.name %>さんの会員詳細</h4>
+      <%= form_with model: @customer, lacal:true do |f| %>
+        <p>会員ID<%= @customer.id %></p>
+        <p>氏名<%= f.text_feild :last_name %><%= f.text_feild :first_name %></p>
+        <p>フリガナ<%= f.text_feild :last_name_kana %><%= f.text_feild :first_name_kana %></p>
+        <p>郵便番号<%= f.text_feild :postal_code %></p>
+        <p>住所 <%= f.text_feild :address %></p>
+        <p>電話番号 <%= f.text_feild :telephone_number %></p>
+        <p>メールアドレス <%= f.text_feild :email %></p>
+        <h4>会員ステータス<%= f.select :is_deleted, Customer.is_deleted.keys.to_a, {} %></h4>
+        <%= f.submit "変更を保存", class: 'btn btn-success' %>
+      <% end %>
+    </div>
